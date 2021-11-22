@@ -38,7 +38,29 @@ export class InicioSesionPage implements OnInit {
 
   }
 
+  buscarUsuario(){
+    this.api.getUsuarios().subscribe(resultado => {
 
+      var resultadoString = JSON.stringify(resultado);
+      var usuarios = JSON.parse(resultadoString);   
+      for(let u in usuarios.Users){
+        if((usuarios.Users[u].nombreUsuario == this.nombreUsuario)){
+          if(usuarios.Users[u].password = this.passUsuario){
+            console.log("conexion");
+          }else{
+            console.log("error pass");
+          }
+          break;
+        }else{
+          console.log("usuarios no encontrado");
+          break;
+        }
+      }
+
+
+    });
+
+  }
 
   ngAfterViewInit(){
     const animation = this.animationCtrl.create().
@@ -57,29 +79,7 @@ export class InicioSesionPage implements OnInit {
   }
 
 
-  buscarUsuario(){
-    this.api.getUsuarios().subscribe(resultado => {
-
-      var resultadoString = JSON.stringify(resultado);
-      var usuarios = JSON.parse(resultadoString);
-
-      for(let u in usuarios.Users){
-
-        if((usuarios.Users[u].nombreUsuario == this.nombreUsuario) || (usuarios.Users[u].email == this.nombreUsuario)){
-          if(usuarios.Users[u].password == this.passUsuario)
-            console.log("conexion");
-
-        }else{
-          console.log("NO ENCONTRANDO USER");
-        }
-          
-      }
-      
-      
-
-    });
-
-  }
+  
 
 }
 

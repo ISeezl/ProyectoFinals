@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class APIService {
 
 
-  public apiURL = 'https://eac9-186-35-95-210.ngrok.io/api/usuarios/';
+  public apiURL = 'https://b631-186-35-95-210.ngrok.io/api/usuarios/';
 
   constructor(public http:HttpClient) { }
 
