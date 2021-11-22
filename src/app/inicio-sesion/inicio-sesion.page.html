@@ -6,7 +6,6 @@
 <ion-content [fullscreen]="true" class= "Fondo">
   <div class="inicioSesion"id="container">
     <ionic-title>
-      <img mat-card-image src="assets/img/tire.png" alt="Photo of a Shiba Inu">
       <h1>Inicio Sesion</h1>
     </ionic-title>
     <div class="componentesInicio">
@@ -16,14 +15,13 @@
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input [(ngModel)]="passUsuario"type="password"></ion-input>
       </ion-item>
     </div>
     <div class="botonesInicio">
-      <ion-button class = "Iniciar" expand="block" (click)="goToMenu()">Iniciar</ion-button>
-    </div>
-    <div class="botoncancelar">
-      <ion-button class="cancelar" expand="block">Cancelar</ion-button>
+      <ion-button expand="block" (click)="goToMenu()">Iniciar</ion-button>
+      <ion-button color="danger "expand="block">Cancelar</ion-button>
+      <ion-button expand="block" (click)="buscarUsuario()">prueba</ion-button>
     </div>
   </div>
 </ion-content>
